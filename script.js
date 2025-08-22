@@ -1,10 +1,10 @@
 // Sample placeholder products
 const products = [
-  { id: 1, name: "Stihl MS 170 Chainsaw", category: "chainsaws", price: "₱8,500", image: "src/images/ms170.jpg" },
-  { id: 2, name: "Stihl FS 120 Brushcutter", category: "brushcutters", price: "₱12,000", image: "src/images/fs120.jpg" },
-  { id: 3, name: "Stihl BG 50 Blower", category: "blowers", price: "₱9,000", image: "src/images/bg50.jpg" },
-  { id: 4, name: "Stihl FSA 45 Trimmer", category: "trimmers", price: "₱6,800", image: "src/images/fsa45.png" },
-  { id: 5, name: "Stihl SR 420 Sprayer", category: "sprayers", price: "₱15,500", image: "src/images/sr420.jpg" }
+  { id: 1, name: "Stihl MS 170 Chainsaw", category: "chainsaws", image: "src/images/ms170.jpg" },
+  { id: 2, name: "Stihl FS 120 Brushcutter", category: "brushcutters", image: "src/images/fs120.jpg" },
+  { id: 3, name: "Stihl BG 50 Blower", category: "blowers", image: "src/images/bg50.jpg" },
+  { id: 4, name: "Stihl FSA 45 Trimmer", category: "trimmers", image: "src/images/fsa45.png" },
+  { id: 5, name: "Stihl SR 420 Sprayer", category: "sprayers", image: "src/images/sr420.jpg" }
 ];
 
 const catalogue = document.getElementById("catalogue");
@@ -19,10 +19,19 @@ function renderProducts(items) {
       <div class="card-body">
         <h3>${item.name}</h3>
         <p>Category: ${item.category}</p>
-        <span>${item.price}</span>
+        <button class="inquiry-btn" data-id="${item.id}">Add to Inquiry</button>
       </div>
     </div>
   `).join("");
+
+  // Add event listeners for inquiry buttons
+  document.querySelectorAll(".inquiry-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const productId = btn.dataset.id;
+      const product = products.find(p => p.id == productId);
+      alert(`${product.name} added to inquiry list (NOT YET FUNCTIONAL).`);
+    });
+  });
 }
 
 // Initial render
