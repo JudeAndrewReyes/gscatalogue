@@ -95,10 +95,10 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
           )}
 
           {/* Brands & Recent Projects */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-1 gap-6">
             {/* Available Brands */}
-            <div className="bg-blue-50 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-blue-800 mb-4">Available Brands</h3>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-bold text-red-800 mb-4">Available Brands</h3>
               <div className="flex flex-wrap gap-2">
                 {category.details.brands.map((brand, index) => (
                   <span 
@@ -106,20 +106,20 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       brand === 'STIHL' 
                         ? 'bg-orange-100 text-orange-800' 
-                        : 'bg-blue-100 text-blue-800'
+                        : 'bg-red-100 text-red-800'
                     }`}
                   >
                     {brand}
                   </span>
                 ))}
-                <span className="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-600">
+                <span className="px-3 py-1 rounded-full text-sm bg-red-100 text-gray-600">
                   +15 more
                 </span>
               </div>
             </div>
 
             {/* Lead Time & Stats */}
-            <div className="bg-green-50 rounded-lg p-6">
+            {/* <div className="bg-green-50 rounded-lg p-6">
               <h3 className="text-lg font-bold text-green-800 mb-4">Service Information</h3>
               <div className="space-y-3">
                 <div>
@@ -136,11 +136,11 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
                   <span className="text-green-600">{category.items}</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Recent Projects */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold text-gray-800 mb-4">Recent {category.title} Projects</h3>
             <div className="space-y-3">
               {category.details.recentProjects.map((project, index) => (
@@ -150,7 +150,7 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Footer CTAs */}
@@ -158,19 +158,19 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
           <div className="grid sm:grid-cols-2 gap-4">
             <button 
               onClick={onQuoteClick}
-              className="bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 transition-colors text-center"
+              className="bg-red-600 text-white p-4 rounded-lg hover:bg-red-700 transition-colors text-center"
             >
               <div className="text-2xl mb-1">📋</div>
               <div className="font-bold mb-1">Request Detailed Quote</div>
-              <div className="text-sm text-blue-200">
+              <div className="text-sm text-gray-200">
                 Custom pricing • Bulk discounts • Project timeline
               </div>
             </button>
             
-            <button className="border border-blue-600 text-blue-600 p-4 rounded-lg hover:bg-blue-50 transition-colors text-center">
+            <button className="border border-gray-600 text-black-600 p-4 rounded-lg hover:bg-red-50 transition-colors text-center">
               <div className="text-2xl mb-1">📞</div>
               <div className="font-bold mb-1">Speak to Specialist</div>
-              <div className="text-sm text-blue-600">
+              <div className="text-sm text-gray-600">
                 Call +63-XXX-XXXX • Technical support available
               </div>
             </button>

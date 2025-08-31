@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-white text-lg font-bold mb-4">ProCure Solutions Philippines</h3>
+            <h3 className="text-white text-lg font-bold mb-4">Gensson Trade Corporation</h3>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <span>📍</span>
@@ -15,15 +15,15 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <span>📞</span>
-                <span>Phone: +63-XXX-XXXX</span>
+                <span>Phone: 043 757 1935 Loc 1932 & 1933</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>✉️</span>
-                <span>Email: genssontc@gmail.com</span>
+                <span>Email: gensson@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>🕒</span>
-                <span>Business Hours: Mon-Fri 8AM-6PM</span>
+                <span>Business Hours: Mon-Fri 8AM-5PM</span>
               </div>
             </div>
           </div>
@@ -77,9 +77,9 @@ const Footer = () => {
               <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-xs">
                 🏆 Authorized STIHL Dealer Since 2018
               </span>
-              <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs">
+              {/* <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs">
                 ISO 9001 Certified
-              </span>
+              </span> */}
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onQuoteClick }
                   🏆 Authorized STIHL Dealer
                 </span>
                 <span className="bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
-                  Global Sourcing Since 2010
+                  Nationwide Sourcing Since 2006
                 </span>
               </div>
             </div>
@@ -40,8 +40,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onQuoteClick }
           {/* Contact & CTA Section */}
           <div className="flex items-center gap-4 flex-wrap">
             <div className="text-sm hidden md:block">
-              <div>Contact: +63-XXX-XXXX</div>
-              <div>genssonts@example.com</div>
+              <div>Contact: 043 757 1935 Loc 1932 & 1933 / 043 723</div>
+              <div>Email: gensson@gmail.com</div>
             </div>
             <button 
               onClick={onQuoteClick}

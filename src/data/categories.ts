@@ -94,7 +94,7 @@ export const categories = [
     items: '275+ Items',
     leadTime: '2-8d',
     description: 'Power Tools, Hand Tools, STIHL Equipment, Hardware',
-    featured: 'STIHL PARTNER',
+    // featured: 'STIHL PARTNER',
     details: {
       capabilities: [
         'Power Tools & Equipment',

@@ -167,7 +167,7 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
         )}
 
         {/* CTA Section */}
-        <div className="mt-16 bg-blue-600 rounded-2xl p-8 text-white text-center">
+        <div className="mt-16 bg-red-600 rounded-2xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-4">
             Can't Find What You're Looking For?
           </h3>
@@ -177,11 +177,11 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
             <button
               onClick={onQuoteClick}
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold shadow-lg"
+              className="bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-red-50 transition-colors font-semibold shadow-lg"
             >
               Request Custom Quote
             </button>
-            <button className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold">
+            <button className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-red-600 transition-colors font-semibold">
               Contact Specialist
             </button>
           </div>

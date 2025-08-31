@@ -234,7 +234,7 @@ Example: 'Need 10 STIHL chainsaws MS 250, 5 cordless drills, safety equipment fo
             </div>
 
             {/* Timeline */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-3">
                 Timeline:
               </label>
@@ -260,7 +260,7 @@ Example: 'Need 10 STIHL chainsaws MS 250, 5 cordless drills, safety equipment fo
                   </label>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Delivery Location */}
             <div>
@@ -303,9 +303,7 @@ Example: 'Need 10 STIHL chainsaws MS 250, 5 cordless drills, safety equipment fo
                   'Please wait...'
                 ) : (
                   <>
-                    • Response in 2-4hrs<br />
-                    • Detailed pricing<br />
-                    • Alternative options
+                    • Response within 24 hours
                   </>
                 )}
               </div>
