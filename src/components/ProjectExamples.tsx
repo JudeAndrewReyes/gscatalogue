@@ -46,7 +46,7 @@ const ProjectExamples = ({ onQuoteClick }) => {
                     </div>
 
                     {/* Project Metrics */}
-                    <div className="flex flex-wrap gap-6 items-center">
+                    {/* <div className="flex flex-wrap gap-6 items-center">
                       <div className="bg-green-100 px-4 py-2 rounded-lg">
                         <span className="text-green-800 font-semibold">
                           Project Value: {project.value}
@@ -57,18 +57,18 @@ const ProjectExamples = ({ onQuoteClick }) => {
                           Delivery: {project.delivery}
                         </span>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
 
               {/* Project Image Placeholder */}
-              <div className="h-48 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center border-t border-gray-100">
+              {/* <div className="h-48 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center border-t border-gray-100">
                 <div className="text-center text-gray-500">
                   <div className="text-4xl mb-2">{project.icon}</div>
                   <p className="text-sm">Project Documentation Available</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

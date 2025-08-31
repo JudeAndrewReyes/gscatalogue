@@ -15,7 +15,7 @@ const CategoryCard = ({ category, onClick, compact = false }) => {
         </div>
         
         {/* Title */}
-        <h3 className={`font-bold ${compact ? 'text-base mb-2' : 'text-lg mb-3'} group-hover:text-blue-600 transition-colors`}>
+        <h3 className={`font-bold ${compact ? 'text-base mb-2' : 'text-lg mb-3'} group-hover:text-red-600 transition-colors`}>
           {category.title}
           {category.featured && (
             <div className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full mt-1 inline-block ml-2 animate-pulse">
@@ -31,17 +31,17 @@ const CategoryCard = ({ category, onClick, compact = false }) => {
         
         {/* Stats */}
         <div className="space-y-2">
-          <div className={`font-semibold text-blue-600 ${compact ? 'text-sm' : 'text-base'}`}>
+          {/* <div className={`font-semibold text-red-600 ${compact ? 'text-sm' : 'text-base'}`}>
             {category.items} Available
-          </div>
-          <div className={`text-gray-500 ${compact ? 'text-xs' : 'text-sm'}`}>
+          </div> */}
+          {/* <div className={`text-gray-500 ${compact ? 'text-xs' : 'text-sm'}`}>
             Lead Time: {category.leadTime}
-          </div>
+          </div> */}
         </div>
         
         {/* CTA */}
         <div className={`${compact ? 'mt-3' : 'mt-4'} opacity-0 group-hover:opacity-100 transition-opacity`}>
-          <div className={`text-blue-600 font-semibold ${compact ? 'text-xs' : 'text-sm'}`}>
+          <div className={`text-red-600 font-semibold ${compact ? 'text-xs' : 'text-sm'}`}>
             View Details & Quote →
           </div>
         </div>

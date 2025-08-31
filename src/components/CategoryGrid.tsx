@@ -34,10 +34,10 @@ const CategoryGrid = ({ onCategorySelect, showAll = false, compact = false }) =>
         
         {!showAll && categories.length > 6 && (
           <div className="text-center mt-8 space-x-4">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+            <button className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold">
               View All {categories.length}+ Categories
             </button>
-            <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
+            <button className="border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition-colors font-semibold">
               See Sample Products
             </button>
           </div>
@@ -46,7 +46,7 @@ const CategoryGrid = ({ onCategorySelect, showAll = false, compact = false }) =>
         {showAll && (
           <div className="text-center mt-8 space-x-4">
             <button className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold">
-              Request Custom Category
+              Request Custom Quote
             </button>
           </div>
         )}

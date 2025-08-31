@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <span>📍</span>
-                <span>Address: San Pedro, Calabarzon</span>
+                <span>Address: DJPMM Access Road, Sta. Clara, Batangas City, Batangas</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>📞</span>
@@ -19,11 +19,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <span>✉️</span>
-                <span>Email: procurement@procuresolutions.ph</span>
+                <span>Email: genssontc@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>🕒</span>
-                <span>Business Hours: Mon-Fri 8AM-6PM, Sat 8AM-12PM</span>
+                <span>Business Hours: Mon-Fri 8AM-6PM</span>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => {
               <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-xs">
                 🏆 Authorized STIHL Dealer Since 2018
               </span>
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">
+              <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs">
                 ISO 9001 Certified
               </span>
             </div>

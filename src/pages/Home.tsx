@@ -29,23 +29,23 @@ const Home = ({ onNavigate, onCategorySelect, onQuoteClick }) => {
       <TrustedPartners />
       
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <section className="py-16 bg-gradient-to-r from-secondary-900 to-primary-700 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">
             Ready to Start Your Procurement Project?
           </h2>
-          <p className="text-xl text-blue-100 mb-12">
+          <p className="text-xl text-red-100 mb-12">
             Get expert sourcing solutions tailored to your needs
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <button 
               onClick={onQuoteClick}
-              className="bg-white text-blue-600 p-8 rounded-xl hover:bg-blue-50 transition-all text-center group shadow-2xl hover:shadow-3xl transform hover:-translate-y-2"
+              className="bg-white text-red-600 p-8 rounded-xl hover:bg-blue-50 transition-all text-center group shadow-2xl hover:shadow-3xl transform hover:-translate-y-2"
             >
               <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">📋</div>
               <h3 className="text-xl font-bold mb-2">Get Custom Quote</h3>
-              <p className="text-blue-600 text-sm">
+              <p className="text-gray-900 text-sm">
                 Tell us your needs<br />
                 Get pricing in 24hrs
               </p>

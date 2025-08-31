@@ -35,9 +35,9 @@ const QuoteForm = ({ category = "Construction & Tools", isOpen = true, onClose =
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">GET DETAILED QUOTE</h2>
-            <p className="text-sm text-gray-600 mt-1">
+            {/* <p className="text-sm text-gray-600 mt-1">
               Category: {category} {category.includes("Construction") && "| STIHL Partnership"}
-            </p>
+            </p> */}
           </div>
           <button 
             onClick={onClose}
@@ -240,14 +240,14 @@ Example: 'Need 10 STIHL chainsaws MS 250, 5 cordless drills, safety equipment fo
               </label>
               <div className="space-y-2">
                 {[
-                  { value: 'standard', label: 'Standard (1-2 weeks)' },
+                  { value: 'standard', label: 'Standard (1-3 weeks)' },
                   { value: 'urgent', label: 'Urgent (3-5 days)' },
-                  { value: 'emergency', label: 'Emergency (24-48 hours) +20% rush fee' }
+                  { value: 'emergency', label: 'Emergency (24-48 hours) +10% rush fee (Subject to approval)' }
                 ].map((option) => (
                   <label key={option.value} className="flex items-center cursor-pointer">
                     <input
                       type="radio"
-                      name="timeline"
+                      name="timeline" 
                       value={option.value}
                       checked={formData.timeline === option.value}
                       onChange={handleInputChange}

@@ -58,14 +58,14 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
               Equipment Categories
             </h1>
             <p className="text-xl text-gray-600">
-              Browse our complete sourcing capabilities across {categories.length} industries
+              Browse our complete sourcing capabilities across industries
             </p>
           </div>
 
           {/* Search and Filters */}
-          <div className="bg-gray-50 rounded-xl p-6">
+          {/* <div className="bg-gray-50 rounded-xl p-6"> */}
             {/* Search Bar */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <div className="relative max-w-2xl mx-auto">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <span className="text-2xl">🔍</span>
@@ -78,11 +78,11 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
                   placeholder="Search categories, products, or brands..."
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* Filter Controls */}
-            <div className="flex flex-wrap gap-4 justify-center">
-              <div className="flex items-center gap-2">
+            {/* <div className="flex flex-wrap gap-4 justify-center"> */}
+              {/* <div className="flex items-center gap-2">
                 <label className="text-sm font-medium text-gray-700">Filter:</label>
                 <select
                   value={selectedFilter}
@@ -93,9 +93,9 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
                   <option value="featured">Featured Partners</option>
                   <option value="fast">Fast Lead Time</option>
                 </select>
-              </div>
+              </div> */}
 
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <label className="text-sm font-medium text-gray-700">Sort by:</label>
                 <select
                   value={sortBy}
@@ -114,8 +114,8 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
               >
                 Request Custom Quote
               </button>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
       </div>
 
@@ -154,7 +154,7 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
             <p className="text-gray-600 mb-6">
               Try adjusting your search terms or filters
             </p>
-            <button
+            {/* <button
               onClick={() => {
                 setSearchQuery('');
                 setSelectedFilter('all');
@@ -162,7 +162,7 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
             >
               Reset Filters
-            </button>
+            </button> */}
           </div>
         )}
 
@@ -179,7 +179,7 @@ const Categories = ({ onCategorySelect, onQuoteClick }) => {
               onClick={onQuoteClick}
               className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold shadow-lg"
             >
-              Request Custom Category
+              Request Custom Quote
             </button>
             <button className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold">
               Contact Specialist

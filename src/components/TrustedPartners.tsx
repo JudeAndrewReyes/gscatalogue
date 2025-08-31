@@ -15,18 +15,18 @@ const TrustedPartners = () => {
         </div>
 
         {/* Featured STIHL Partnership */}
-        <div className="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-8 mb-12">
+        <div className="bg-gradient-to-br from-red-50 to-red-50 border border-red-200 rounded-2xl p-8 mb-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-20 h-20 bg-orange-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                <div className="w-20 h-20 bg-red-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                   🟠
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-orange-800">
+                  <h3 className="text-2xl font-bold text-red-800">
                     STIHL Authorized Dealer
                   </h3>
-                  <p className="text-orange-700 font-medium">
+                  <p className="text-red-700 font-medium">
                     Partnership Since 2018
                   </p>
                 </div>
@@ -40,7 +40,7 @@ const TrustedPartners = () => {
                 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-semibold text-orange-800 mb-2">Professional Equipment:</h4>
+                    <h4 className="font-semibold text-red-800 mb-2">Professional Equipment:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
                       <li>• Chainsaws & Power Tools</li>
                       <li>• Trimmers & Brushcutters</li>
@@ -50,7 +50,7 @@ const TrustedPartners = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold text-orange-800 mb-2">Partnership Benefits:</h4>
+                    <h4 className="font-semibold text-red-800 mb-2">Partnership Benefits:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
                       <li>• Authorized warranty service</li>
                       <li>• Genuine parts & accessories</li>
@@ -64,14 +64,14 @@ const TrustedPartners = () => {
             
             <div className="text-center">
               <div className="bg-white rounded-xl p-8 shadow-lg">
-                <div className="text-6xl text-orange-600 mb-4">🏆</div>
+                <div className="text-6xl text-red-600 mb-4">🏆</div>
                 <h4 className="text-xl font-bold text-gray-800 mb-2">
                   Authorized Since 2018
                 </h4>
                 <p className="text-gray-600 mb-4">
                   6+ Years of Professional Partnership
                 </p>
-                <div className="bg-orange-100 text-orange-800 px-4 py-2 rounded-lg inline-block font-semibold">
+                <div className="bg-red-100 text-gray-800 px-4 py-2 rounded-lg inline-block font-semibold">
                   ₱50M+ STIHL Equipment Sourced
                 </div>
               </div>
@@ -107,11 +107,11 @@ const TrustedPartners = () => {
           </div>
           
           <div className="text-center mt-8">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg">
+            <button className="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold shadow-lg">
               View All Brand Partners
             </button>
             <p className="text-gray-600 mt-4">
-              <span className="font-bold text-blue-600">20+</span> authorized brand partnerships
+              <span className="font-bold text-red-600">20+</span> authorized brand partnerships
             </p>
           </div>
         </div>
@@ -126,7 +126,7 @@ const TrustedPartners = () => {
             {[
               { number: '500+', label: 'Companies Served', icon: '🏢' },
               { number: '24hr', label: 'Response Time', icon: '⚡' },
-              { number: 'Global', label: 'Supplier Network', icon: '🌍' },
+              { number: 'Nationwide', label: 'Supplier Network', icon: '🌍' },
               { number: 'ISO 9001', label: 'Certified Process', icon: '✅' },
               { number: '20+', label: 'Authorized Dealers', icon: '🤝' },
               { number: 'Best', label: 'Pricing Guarantee', icon: '💰' }
@@ -135,7 +135,7 @@ const TrustedPartners = () => {
                 <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
                   {stat.icon}
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mb-1">
+                <div className="text-2xl font-bold text-red-600 mb-1">
                   {stat.number}
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
