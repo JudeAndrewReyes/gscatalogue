@@ -1,22 +1,29 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import CategoryModal from './components/CategoryModal';
 import QuoteForm from './components/QuoteForm';
+import { categories, type Category } from './data/categories'; // Import categories
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
 
-  const handleNavigate = (page) => {
+  const handleNavigate = (page: string) => {
     setCurrentPage(page);
     setSelectedCategory(null);
   };
 
-  const handleCategorySelect = (category) => {
+  const handleCategorySelect = (categoryId: string) => {
+    console.log('Selected category ID:', categoryId); // Debug
+    const category = categories.find((cat) => cat.id === categoryId);
+    if (!category) {
+      console.error('Category not found for ID:', categoryId);
+      return;
+    }
     setSelectedCategory(category);
   };
 
@@ -36,7 +43,7 @@ const App = () => {
         onQuoteClick={() => setShowQuoteForm(true)}
       />
       
-      <main className="flex-1">
+      <main className="flex-1 pt-24">
         {currentPage === 'home' ? (
           <Home 
             onNavigate={handleNavigate}
@@ -53,7 +60,6 @@ const App = () => {
       
       <Footer />
       
-      {/* Modals */}
       {selectedCategory && (
         <CategoryModal 
           category={selectedCategory}
@@ -67,7 +73,8 @@ const App = () => {
       
       {showQuoteForm && (
         <QuoteForm 
-          selectedCategory={selectedCategory}
+          category={selectedCategory ? selectedCategory.title : undefined} // Fix prop to match QuoteFormProps
+          isOpen={showQuoteForm}
           onClose={handleCloseQuoteForm}
         />
       )}

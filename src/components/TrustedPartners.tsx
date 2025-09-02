@@ -1,9 +1,9 @@
-import React from 'react';
+// import React from 'react';
 import { brandPartners } from '../data/brandPartners';
 
 const TrustedPartners = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-2 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
@@ -80,7 +80,7 @@ const TrustedPartners = () => {
         </div>
 
         {/* Other Brand Partners */}
-        <div className="bg-gray-50 rounded-2xl p-8">
+        <div className="bg-gray-50 rounded-2xl p-2">
           <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
             Additional Brand Partners
           </h3>
@@ -106,14 +106,14 @@ const TrustedPartners = () => {
             ))}
           </div>
           
-          <div className="text-center mt-8">
+          {/* <div className="text-center mt-8">
             <button className="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold shadow-lg">
               View All Brand Partners
             </button>
             <p className="text-gray-600 mt-4">
               <span className="font-bold text-red-600">20+</span> authorized brand partnerships
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* Why Choose Us Stats */}

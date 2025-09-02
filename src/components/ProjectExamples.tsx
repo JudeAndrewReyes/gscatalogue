@@ -1,7 +1,11 @@
 import React from 'react';
 import { projectExamples } from '../data/projectExamples';
 
-const ProjectExamples = ({ onQuoteClick }) => {
+interface ProjectExamplesProps {
+  onQuoteClick: () => void;
+}
+
+const ProjectExamples: React.FC<ProjectExamplesProps> = ({ onQuoteClick }) => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,15 +84,15 @@ const ProjectExamples = ({ onQuoteClick }) => {
               onClick={onQuoteClick}
               className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Request Similar Quote
+              Request Quote
             </button>
-            <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
+            {/* <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
               View More Case Studies
-            </button>
+            </button> */}
           </div>
           
           <p className="text-gray-600 mt-4 text-lg">
-            Over <span className="font-bold text-blue-600">500+ companies</span> served since 2010
+            Over <span className="font-bold text-blue-600">500+ companies</span> served since 2006
           </p>
         </div>
       </div>

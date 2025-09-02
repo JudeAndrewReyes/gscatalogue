@@ -1,9 +1,16 @@
 import React from 'react';
+import { type Category } from '../data/categories';
 
-const CategoryCard = ({ category, onClick, compact = false }) => {
+type CategoryCardProps = {
+  category: Category;
+  onClick: (categoryId: string) => void;  // function that takes a category ID
+  compact?: boolean;
+};
+
+const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick, compact = false }) => {
   return (
     <div 
-      onClick={() => onClick(category)}
+      onClick={() => onClick(category.id)}
       className={`bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all cursor-pointer group transform hover:-translate-y-1 ${
         compact ? 'p-4' : 'p-6'
       }`}
@@ -19,7 +26,7 @@ const CategoryCard = ({ category, onClick, compact = false }) => {
           {category.title}
           {category.featured && (
             <div className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full mt-1 inline-block ml-2 animate-pulse">
-              🏆 {category.featured}
+              🏆 Featured
             </div>
           )}
         </h3>

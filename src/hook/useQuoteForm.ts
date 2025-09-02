@@ -1,7 +1,56 @@
+// hook/useQuoteForm.ts
 import { useState } from 'react';
 
-const useQuoteForm = (initialCategory = "Construction & Tools") => {
-  const [formData, setFormData] = useState({
+// Define FormData to match QuoteForm
+interface FormData {
+  contactName: string;
+  company: string;
+  email: string;
+  phone: string;
+  projectType: string;
+  otherProjectType: string;
+  equipmentNeeded: string;
+  budgetRange: string;
+  timeline: string;
+  deliveryLocation: string;
+}
+
+// Define FormErrors to match useQuoteForm logic
+interface FormErrors {
+  contactName?: string;
+  email?: string;
+  equipmentNeeded?: string;
+  [key: string]: string | undefined;
+}
+
+// Define return type
+interface UseQuoteFormReturn {
+  formData: FormData;
+  errors: FormErrors;
+  isSubmitting: boolean;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  handleProjectTypeChange: (type: string) => void;
+  validateForm: () => boolean;
+  submitForm: (
+    onSuccess?: (data: FormData) => void,
+    onError?: (error: Error | string) => void
+  ) => Promise<boolean>;
+  resetForm: () => void;
+  setFieldError: (fieldName: string, errorMessage: string) => void;
+  clearErrors: () => void;
+  updateFormData: (updates: Partial<FormData>) => void;
+  getFormSummary: () => {
+    isValid: boolean;
+    completedRequired: number;
+    totalRequiredFields: number;
+    completedTotal: number;
+    totalFields: number;
+    completionPercentage: number;
+  };
+}
+
+const useQuoteForm = (initialCategory = "Construction & Tools"): UseQuoteFormReturn => {
+  const [formData, setFormData] = useState<FormData>({
     contactName: '',
     company: '',
     email: '',
@@ -14,10 +63,11 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
     deliveryLocation: ''
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -33,7 +83,7 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
     }
   };
 
-  const handleProjectTypeChange = (type) => {
+  const handleProjectTypeChange = (type: string) => {
     setFormData(prev => ({
       ...prev,
       projectType: type,
@@ -42,7 +92,7 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
   };
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: FormErrors = {};
     
     if (!formData.contactName.trim()) {
       newErrors.contactName = 'Contact name is required';
@@ -79,7 +129,7 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
     setIsSubmitting(false);
   };
 
-  const submitForm = async (onSuccess, onError) => {
+  const submitForm = async (onSuccess?: (data: FormData) => void, onError?: (error: Error | string) => void) => {
     if (!validateForm()) {
       return false;
     }
@@ -105,7 +155,7 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
       
       // Call error callback if provided
       if (onError) {
-        onError(error);
+        onError(error instanceof Error ? error : String(error)); // Fix: pass single argument
       }
       
       return false;
@@ -114,7 +164,7 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
     }
   };
 
-  const setFieldError = (fieldName, errorMessage) => {
+  const setFieldError = (fieldName: string, errorMessage: string) => {
     setErrors(prev => ({
       ...prev,
       [fieldName]: errorMessage
@@ -125,7 +175,7 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
     setErrors({});
   };
 
-  const updateFormData = (updates) => {
+  const updateFormData = (updates: Partial<FormData>) => {
     setFormData(prev => ({
       ...prev,
       ...updates
@@ -133,17 +183,18 @@ const useQuoteForm = (initialCategory = "Construction & Tools") => {
   };
 
   const getFormSummary = () => {
-    const requiredFields = ['contactName', 'email', 'equipmentNeeded'];
+    const requiredFields: (keyof FormData)[] = ['contactName', 'email', 'equipmentNeeded'];
     const completedRequired = requiredFields.filter(field => formData[field].trim()).length;
-    const totalFields = Object.keys(formData).filter(key => formData[key]).length;
+    const allFormDataEntries = Object.entries(formData);
+    const totalFields = allFormDataEntries.filter(([_, value]) => value.trim()).length;
     
     return {
-      isValid: validateForm(),
+      isValid: Object.keys(errors).length === 0,
       completedRequired,
       totalRequiredFields: requiredFields.length,
       completedTotal: totalFields,
-      totalFields: Object.keys(formData).length,
-      completionPercentage: Math.round((totalFields / Object.keys(formData).length) * 100)
+      totalFields: allFormDataEntries.length,
+      completionPercentage: Math.round((totalFields / allFormDataEntries.length) * 100)
     };
   };
 

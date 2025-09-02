@@ -2,7 +2,18 @@ import React from 'react';
 import CategoryCard from './CategoryCard';
 import { categories } from '../data/categories';
 
-const CategoryGrid = ({ onCategorySelect, showAll = false, compact = false }) => {
+
+type CategoryGridProps = {
+  onCategorySelect: (categoryId: string) => void;
+  showAll?: boolean;
+  compact?: boolean;
+};
+
+const CategoryGrid: React.FC<CategoryGridProps> = ({
+  onCategorySelect,
+  showAll = false,
+  compact = false,
+}) => {
   const displayCategories = showAll ? categories : categories.slice(0, 6);
 
   return (
@@ -37,9 +48,9 @@ const CategoryGrid = ({ onCategorySelect, showAll = false, compact = false }) =>
             <button className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold">
               View All {categories.length}+ Categories
             </button>
-            <button className="border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition-colors font-semibold">
+            {/* <button className="border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition-colors font-semibold">
               See Sample Products
-            </button>
+            </button> */}
           </div>
         )}
         

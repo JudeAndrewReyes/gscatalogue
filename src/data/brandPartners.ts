@@ -173,12 +173,12 @@ export const getFeaturedPartners = () => {
   return brandPartners.filter(partner => partner.featured);
 };
 
-export const getPartnersByCategory = (category) => {
+export const getPartnersByCategory = (category: string) => {
   return brandPartners.filter(partner => 
     partner.category.toLowerCase().includes(category.toLowerCase())
   );
 };
 
-export const getPartnerById = (id) => {
+export const getPartnerById = (id: string) => {
   return brandPartners.find(partner => partner.id === id);
 };

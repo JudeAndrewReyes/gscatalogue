@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Hero = ({ onNavigate, onQuoteClick }) => {
+interface HeroProps {
+  onNavigate: (section: string) => void;
+  onQuoteClick: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onNavigate, onQuoteClick }) => {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

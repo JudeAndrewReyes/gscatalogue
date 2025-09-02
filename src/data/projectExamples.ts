@@ -175,21 +175,25 @@ export const projectExamples = [
   }
 ];
 
-export const getProjectsByCategory = (categoryId) => {
+export const getProjectsByCategory = (categoryId: string) => {
   return projectExamples.filter(project => 
     project.categories.includes(categoryId)
   );
 };
 
-export const getProjectsByValue = (minValue) => {
+export const getProjectsByValue = (minValue: number) => {
   return projectExamples.filter(project => {
     const value = parseFloat(project.value.replace(/[₱,M]/g, ''));
     return value >= minValue;
   });
 };
 
-export const getRecentProjects = (limit = 3) => {
+export const getRecentProjects = (limit: number = 3) => {
   return projectExamples
-    .sort((a, b) => new Date(b.timeline.ordered) - new Date(a.timeline.ordered))
+    .sort((a, b) => {
+      const dateA = new Date(a.timeline.ordered).getTime();
+      const dateB = new Date(b.timeline.ordered).getTime();
+      return dateB - dateA; // Sort in descending order
+    })
     .slice(0, limit);
 };

@@ -2,7 +2,31 @@ import React from 'react';
 import { X, Phone } from 'lucide-react';
 import useQuoteForm from '../hook/useQuoteForm';
 
-const QuoteForm = ({ category = "Construction & Tools", isOpen = true, onClose = () => {} }) => {
+interface QuoteFormProps {
+  category?: string;
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+// Define the form data type to match your hook
+interface FormData {
+  contactName: string;
+  company: string;
+  email: string;
+  phone: string;
+  projectType: string;
+  otherProjectType: string;
+  equipmentNeeded: string;
+  budgetRange: string;
+  timeline: string;
+  deliveryLocation: string;
+}
+
+const QuoteForm: React.FC<QuoteFormProps> = ({ 
+  category = "Construction & Tools", 
+  isOpen = true, 
+  onClose = () => {} 
+}) => {
   const {
     formData,
     errors,
@@ -13,14 +37,16 @@ const QuoteForm = ({ category = "Construction & Tools", isOpen = true, onClose =
   } = useQuoteForm(category);
 
   const handleSubmit = async () => {
-    const success = await submitForm(
-      (data) => {
-        // Success callback
+    await submitForm(
+      (data: FormData) => {
+        // Success callback - properly typed
+        console.log('Quote submitted successfully:', data);
         alert('Quote request submitted successfully! We\'ll respond within 2-4 hours.');
         onClose();
       },
-      (error) => {
-        // Error callback
+      (error: Error | string) => {
+        // Error callback - properly typed to handle both Error objects and strings
+        console.error('Submission failed:', error);
         alert('Submission failed. Please try again.');
       }
     );
@@ -35,9 +61,9 @@ const QuoteForm = ({ category = "Construction & Tools", isOpen = true, onClose =
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">GET DETAILED QUOTE</h2>
-            {/* <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-gray-600 mt-1">
               Category: {category} {category.includes("Construction") && "| STIHL Partnership"}
-            </p> */}
+            </p>
           </div>
           <button 
             onClick={onClose}
@@ -242,7 +268,7 @@ Example: 'Need 10 STIHL chainsaws MS 250, 5 cordless drills, safety equipment fo
                 {[
                   { value: 'standard', label: 'Standard (1-3 weeks)' },
                   { value: 'urgent', label: 'Urgent (3-5 days)' },
-                  { value: 'emergency', label: 'Emergency (24-48 hours) +10% rush fee (Subject to approval)' }
+                  { value: 'emergency', label: 'Emergency (24-48 hours) +10% rush fee' }
                 ].map((option) => (
                   <label key={option.value} className="flex items-center cursor-pointer">
                     <input
@@ -302,9 +328,7 @@ Example: 'Need 10 STIHL chainsaws MS 250, 5 cordless drills, safety equipment fo
                 {isSubmitting ? (
                   'Please wait...'
                 ) : (
-                  <>
-                    • Response within 24 hours
-                  </>
+                  'Response within 24 hours'
                 )}
               </div>
             </button>

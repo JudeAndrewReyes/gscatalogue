@@ -1,4 +1,19 @@
-export const categories = [
+export interface Category {
+  id: string;
+  title: string;
+  icon: string;
+  items: string;
+  leadTime: string;
+  description: string;
+  featured: string;
+  details: {
+    capabilities: string[];
+    brands: string[];
+    recentProjects: string[];
+  };
+}
+
+export const categories: Category[] = [
   {
     id: 'safety',
     title: 'Safety & Security',
@@ -6,6 +21,7 @@ export const categories = [
     items: '150+ Items',
     leadTime: '3-7d',
     description: 'PPE Equipment, Safety Systems, Rescue Gear',
+    featured: '',
     details: {
       capabilities: [
         'Personal Protective Equipment (PPE)',
@@ -28,6 +44,7 @@ export const categories = [
     items: '245+ Items',
     leadTime: '7-14d',
     description: 'Heavy Machinery, Manufacturing Tools, Material Handling',
+    featured: '',
     details: {
       capabilities: [
         'Heavy Manufacturing Equipment',
@@ -50,6 +67,7 @@ export const categories = [
     items: '180+ Items',
     leadTime: '5-10d',
     description: 'Power Systems, Generators, Lighting',
+    featured: '',
     details: {
       capabilities: [
         'Power Distribution Systems',
@@ -72,6 +90,7 @@ export const categories = [
     items: '320+ Items',
     leadTime: '5-12d',
     description: 'Vehicle Parts, Engines, Lubricants, Tires/Batteries',
+    featured: '',
     details: {
       capabilities: [
         'Vehicle Parts & Components',
@@ -94,7 +113,7 @@ export const categories = [
     items: '275+ Items',
     leadTime: '2-8d',
     description: 'Power Tools, Hand Tools, STIHL Equipment, Hardware',
-    // featured: 'STIHL PARTNER',
+    featured: '',
     details: {
       capabilities: [
         'Power Tools & Equipment',
@@ -103,21 +122,6 @@ export const categories = [
         'STIHL Professional Equipment'
       ],
       brands: ['STIHL', 'DeWalt', 'Makita', 'Bosch', 'Milwaukee'],
-      stihlPartnership: {
-        since: '2018',
-        products: [
-          'Chainsaws (MS 170 to MS 881 Professional)',
-          'Trimmers & Brushcutters (FS series)',
-          'Blowers & Clearing Equipment (BR series)',
-          'Professional Pole Saws & Tree Care'
-        ],
-        benefits: [
-          'Authorized warranty service',
-          'Genuine parts & accessories',
-          'Bulk pricing for contractors',
-          'Technical support & training'
-        ]
-      },
       recentProjects: [
         'BGC Tower - Complete tool package - ₱3.2M',
         'STIHL Equipment for Ayala Land - ₱1.8M',
@@ -155,6 +159,7 @@ export const categories = [
     items: '125+ Items',
     leadTime: '5-15d',
     description: 'Lab Equipment, Scientific Instruments, Environmental Monitoring',
+    featured: '',
     details: {
       capabilities: [
         'Laboratory Equipment & Instruments',
@@ -177,6 +182,7 @@ export const categories = [
     items: '160+ Items',
     leadTime: '3-10d',
     description: 'Office Supplies, Furniture, Appliances, Conference Equipment',
+    featured: '',
     details: {
       capabilities: [
         'Office Furniture & Supplies',
@@ -199,6 +205,7 @@ export const categories = [
     items: '95+ Items',
     leadTime: '7-20d',
     description: 'Pump Systems, Pool Equipment, Weighing Systems',
+    featured: '',
     details: {
       capabilities: [
         'Industrial Pump Systems',

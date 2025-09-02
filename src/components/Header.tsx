@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onQuoteClick }) => {
   return (
-    <header className="bg-gradient-to-r from-secondary-900 to-primary-700 text-white shadow-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-secondary-900 to-primary-700 text-white shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 flex-wrap gap-4">
           {/* Logo Section */}

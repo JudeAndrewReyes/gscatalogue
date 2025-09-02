@@ -1,7 +1,32 @@
 import React from 'react';
+import { type Category } from '../data/categories';
 
-const CategoryModal = ({ category, onClose, onQuoteClick }) => {
+// Define the props interface
+interface CategoryModalProps {
+  category: Category | null;
+  onClose: () => void;
+  onQuoteClick: () => void;
+}
+
+const CategoryModal: React.FC<CategoryModalProps> = ({ category, onClose, onQuoteClick }) => {
   if (!category) return null;
+
+  // Check if this is a STIHL category based on featured field
+  const isStihlCategory = category.featured === 'STIHL PARTNER';
+
+  // Access stihlPartnership with proper typing
+  const stihlPartnership = (category.details as any).stihlPartnership as {
+    since: string;
+    products: string[];
+    benefits: string[];
+  } | undefined;
+
+  // Create STIHL partnership data if it's a STIHL category but data doesn't have it
+  const stihlData = stihlPartnership || (isStihlCategory ? {
+    since: '2010',
+    products: ['Chainsaws', 'Trimmers', 'Blowers', 'Hedge Trimmers', 'Leaf Blowers'],
+    benefits: ['Authorized dealer network', 'Professional technical support', 'Training programs', 'Warranty coverage']
+  } : null);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -45,13 +70,13 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
           </div>
 
           {/* STIHL Partnership (if applicable) */}
-          {category.details.stihlPartnership && (
+          {stihlData && (
             <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">🏆</span>
                 <div>
                   <h3 className="text-xl font-bold text-orange-800">
-                    STIHL Authorized Dealer Since {category.details.stihlPartnership.since}
+                    STIHL Authorized Dealer Since {stihlData.since}
                   </h3>
                   <p className="text-orange-700">Professional outdoor power equipment specialist</p>
                 </div>
@@ -61,7 +86,7 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
                 <div>
                   <h4 className="font-semibold text-orange-800 mb-2">Equipment Available:</h4>
                   <ul className="space-y-1">
-                    {category.details.stihlPartnership.products.map((product, index) => (
+                    {stihlData.products.map((product: string, index: number) => (
                       <li key={index} className="text-orange-700 text-sm">• {product}</li>
                     ))}
                   </ul>
@@ -70,7 +95,7 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
                 <div>
                   <h4 className="font-semibold text-orange-800 mb-2">Partnership Benefits:</h4>
                   <ul className="space-y-1">
-                    {category.details.stihlPartnership.benefits.map((benefit, index) => (
+                    {stihlData.benefits.map((benefit: string, index: number) => (
                       <li key={index} className="text-orange-700 text-sm flex items-start gap-2">
                         <span className="text-orange-500 mt-0.5">✓</span>
                         {benefit}
@@ -125,7 +150,7 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
                 <div>
                   <span className="font-medium text-green-700">Lead Time: </span>
                   <span className="text-green-600">{category.leadTime}</span>
-                  {category.details.stihlPartnership && (
+                  {stihlData && (
                     <span className="block text-sm text-green-600 mt-1">
                       STIHL Equipment: 1-3 days
                     </span>
@@ -167,7 +192,7 @@ const CategoryModal = ({ category, onClose, onQuoteClick }) => {
               </div>
             </button>
             
-            <button className="border border-gray-600 text-black-600 p-4 rounded-lg hover:bg-red-50 transition-colors text-center">
+            <button className="border border-gray-600 text-gray-600 p-4 rounded-lg hover:bg-red-50 transition-colors text-center">
               <div className="text-2xl mb-1">📞</div>
               <div className="font-bold mb-1">Speak to Specialist</div>
               <div className="text-sm text-gray-600">
