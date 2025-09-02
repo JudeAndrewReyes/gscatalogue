@@ -1,4 +1,5 @@
 import React from 'react';
+import G1 from "@/assets/G1.png";
 
 interface HeroProps {
   onNavigate: (section: string) => void;
@@ -14,7 +15,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate, onQuoteClick }) => {
           <div className="text-center lg:text-left">
             <div
               className="w-32 h-32 rounded-2xl flex items-center justify-center mb-6 shadow-2xl mx-auto lg:mx-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/src/assets/G1.png')" }}
+              style={{ backgroundImage: `url(${G1})` }}
             >
             </div>
 

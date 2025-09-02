@@ -1,4 +1,5 @@
 import React from 'react';
+import G1 from "@/assets/G1.png";
 
 interface HeaderProps {
   currentPage: string;
@@ -15,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onQuoteClick }
           <div className="flex items-center gap-4">
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl bg-cover bg-center"
-              style={{ backgroundImage: "url('/src/assets/G1.png')" }}
+              style={{ backgroundImage: `url(${G1})` }}
             />
             
             <div className="flex flex-col justify-center">
