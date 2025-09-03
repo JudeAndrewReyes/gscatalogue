@@ -49,6 +49,7 @@ const App = () => {
             onNavigate={handleNavigate}
             onCategorySelect={handleCategorySelect}
             onQuoteClick={() => setShowQuoteForm(true)}
+            onCallNow={() => window.location.href = 'tel:+639189333391'}
           />
         ) : (
           <Categories 
