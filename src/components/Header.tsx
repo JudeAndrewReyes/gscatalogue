@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onQuoteClick }) => {
             </div>
             <button 
               onClick={onQuoteClick}
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+              className="hidden md:block bg-red-500 hover:bg-red-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
             >
               Get Quote
             </button>
