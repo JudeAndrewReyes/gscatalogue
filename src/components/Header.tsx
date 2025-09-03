@@ -5,8 +5,10 @@ interface HeaderProps {
   currentPage: string;
   onNavigate: (page: string) => void;
   onQuoteClick: () => void;
+  isVisible?: boolean;
 }
-const Header: React.FC<HeaderProps> = ({ onNavigate, onQuoteClick }) => {
+const Header: React.FC<HeaderProps> = ({ onNavigate, onQuoteClick, isVisible }) => {
+   if (!isVisible) return null;
 // const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onQuoteClick }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-525 bg-white shadow-lg border-b border-gray-100">

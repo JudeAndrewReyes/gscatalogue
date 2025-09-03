@@ -11,6 +11,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
@@ -25,10 +26,12 @@ const App = () => {
       return;
     }
     setSelectedCategory(category);
+    setIsHeaderVisible(false);
   };
 
   const handleCloseModal = () => {
     setSelectedCategory(null);
+    setIsHeaderVisible(true);
   };
 
   const handleCloseQuoteForm = () => {
@@ -41,6 +44,7 @@ const App = () => {
         currentPage={currentPage}
         onNavigate={handleNavigate}
         onQuoteClick={() => setShowQuoteForm(true)}
+        isVisible={isHeaderVisible && !showQuoteForm}
       />
       
       <main className="flex-1 pt-24">
