@@ -8,28 +8,28 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onNavigate, onQuoteClick }) => {
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+    <section className="bg-white py-0 mt-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Company Badge */}
           <div className="text-center lg:text-left">
             <div
-              className="w-32 h-32 rounded-2xl flex items-center justify-center mb-6 shadow-2xl mx-auto lg:mx-0 bg-cover bg-center"
+              className="w-64 h-64 rounded-full flex items-center justify-center mb-6 shadow-lg mx-auto lg:mx-0 bg-cover bg-center border-4 border-red-100"
               style={{ backgroundImage: `url(${G1})` }}
             >
             </div>
 
-            <div className="space-y-2 text-blue-600 mb-6">
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <span className="text-lg">🌍</span>
+            <div className="space-y-3 text-gray-700 mb-6">
+              <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                 <span className="font-medium">National Procurement</span>
               </div>
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <span className="text-lg">📋</span>
+              <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                 <span className="font-medium">Partner Solutions</span>
               </div>
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <span className="text-lg">🤝</span>
+              <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                 <span className="font-medium">Trusted Network</span>
               </div>
             </div>
@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate, onQuoteClick }) => {
           <div className="space-y-6 text-center lg:text-left">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               Professional Equipment 
-              <span className="text-red-600 block">Sourcing</span>
+              <span className="text-red-500 block">Sourcing</span>
             </h1>
             
             <div className="space-y-2">
@@ -59,29 +59,29 @@ const Hero: React.FC<HeroProps> = ({ onNavigate, onQuoteClick }) => {
             <div className="grid sm:grid-cols-2 gap-4 mt-8 max-w-2xl mx-auto lg:mx-0">
               <button 
                 onClick={() => onNavigate('categories')}
-                className="group bg-gray-100 text-gray-900 p-6 rounded-xl hover:bg-gray-200 text-gray-900 transition-all text-left shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-900 p-6 rounded-xl transition-all text-left shadow-md hover:shadow-lg transform hover:-translate-y-1"
               >
                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">🔍</div>
                 <h3 className="font-bold text-lg mb-1">Browse Equipment</h3>
                 <h3 className="font-bold text-lg mb-2">Categories</h3>
-                <p className="text-gray-900 text-sm">Explore our sourcing capabilities</p>
+                <p className="text-gray-600 text-sm">Explore our sourcing capabilities</p>
               </button>
               
-              <button className="group bg-gray-800 text-white p-6 rounded-xl hover:bg-gray-900 text-white transition-all text-left shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <button className="group bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-900 p-6 rounded-xl transition-all text-left shadow-md hover:shadow-lg transform hover:-translate-y-1">
                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">📤</div>
                 <h3 className="font-bold text-lg mb-1">Upload Purchase</h3>
                 <h3 className="font-bold text-lg mb-2">Order</h3>
-                <p className="text-gray-100 text-sm">Already know what you need?</p>
+                <p className="text-gray-600 text-sm">Already know what you need?</p>
               </button>
             </div>
             
             <button 
               onClick={onQuoteClick}
-              className="group w-full bg-red-600 hover:bg-red-700 text-white p-6 rounded-xl hover:from-orange-600 hover:to-red-600 transition-all text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="group w-full bg-red-500 hover:bg-red-600 text-white p-6 rounded-xl transition-all text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">💬</div>
               <h3 className="font-bold text-lg mb-2">Request Custom Quote</h3>
-              <p className="text-gray-900">Tell us what you need and we'll source it for you</p>
+              <p className="text-red-100">Tell us what you need and we'll source it for you</p>
             </button>
           </div>
         </div>
